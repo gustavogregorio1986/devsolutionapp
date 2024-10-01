@@ -1,1 +1,10 @@
-<p>menu works!</p>
+<nav>
+    <ul>
+      <li><a [routerLink]="['/']" routerLinkActive="active">Home</a></li>
+      <li><a [routerLink]="['/cadastro']" routerLinkActive="active">Cadastrar</a></li>
+      <li><a [routerLink]="['/consulta']" routerLinkActive="active">Consultar</a></li>
+      <li><a [routerLink]="['/ativos']" routerLinkActive="active">Lista de Ativos</a></li>
+      <li><a [routerLink]="['/inativos']" routerLinkActive="active">Lista de Inativos</a></li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-consulta',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './consulta.component.html',
   styleUrl: './consulta.component.css'
 })
