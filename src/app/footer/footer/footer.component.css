@@ -1,0 +1,30 @@
+footer {
+    background-color: #4e3b34; /* Cor de fundo marrom */
+    color: white; /* Cor do texto branco */
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .footer-content {
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo */
+  }
+  
+  .footer-content ul {
+    list-style: none; /* Remove os marcadores da lista */
+    padding: 0;
+  }
+  
+  .footer-content ul li {
+    display: inline; /* Exibe os itens da lista na mesma linha */
+    margin: 0 15px; /* Espaçamento entre os itens */
+  }
+  
+  .footer-content a {
+    color: white; /* Cor do link */
+    text-decoration: none; /* Remove o sublinhado */
+  }
+  
