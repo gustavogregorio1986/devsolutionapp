@@ -8,11 +8,23 @@ import { Observable } from 'rxjs';
 })
 export class EmpresaService {
 
-  private apiUrl = 'http://localhost:33481'
+  private apiUrl = 'https://localhost:7135/api/Empresa'
 
   constructor(private http: HttpClient) { }
 
   cadastrar(empresa: Empresa): Observable<Empresa> {
-    return this.http.post<Empresa>(this.apiUrl, empresa);
+    return this.http.post<Empresa>(`${this.apiUrl}/Adicionar`, empresa);
+  }
+
+  listar(): Observable<Empresa[]> {
+    return this.http.get<Empresa[]>(`${this.apiUrl}/ListarEmpresas`);
+  }
+
+  listarAtivos(): Observable<Empresa[]> {
+    return this.http.get<Empresa[]>(`${this.apiUrl}/ListarAtivos`);
+  }
+
+  listarInativos(): Observable<Empresa[]> {
+    return this.http.get<Empresa[]>(`${this.apiUrl}/ListarInativos`);
   }
 }
