@@ -1,1 +1,33 @@
 <h2 class="center">Cadastrar empresa</h2>
+<form [formGroup]="empresaForm" (ngSubmit)="onSubmit()" class="form-container">
+    <label for="NomeEmpresa">Nome do Empregado:</label>
+    <input id="NomeEmpresa" formControlName="NomeEmpresa" />
+    <div *ngIf="empresaForm.get('NomeEmpresa')?.invalid && empresaForm.get('NomeEmpresa')?.touched">
+      O nome do empregado é obrigatório.
+    </div>
+  
+    <label for="Cnpj">CNPJ:</label>
+    <input id="Cnpj" formControlName="Cnpj" />
+    <div *ngIf="empresaForm.get('Cnpj')?.invalid && empresaForm.get('Cnpj')?.touched">
+      Insira um CNPJ válido.
+    </div>
+  
+    <label for="EnumSituacao">Situação:</label>
+    <!-- Use a select here for enum dropdown -->
+    <select id="EnumSituacao" formControlName="EnumSituacao">
+      <option *ngFor="let situacao of enumSituacoes" [value]="situacao.value">
+        {{ situacao.label }}
+      </option>
+    </select>
+    <div *ngIf="empresaForm.get('EnumSituacao')?.invalid && empresaForm.get('EnumSituacao')?.touched">
+      A situação é obrigatória.
+    </div>
+  
+    <label for="Setor">Setor:</label>
+    <input id="Setor" formControlName="Setor" />
+    <div *ngIf="empresaForm.get('Setor')?.invalid && empresaForm.get('Setor')?.touched">
+      O setor deve ter no mínimo 6 caracteres.
+    </div>
+  
+    <button type="submit" [disabled]="empresaForm.invalid">Enviar</button>
+</form>
