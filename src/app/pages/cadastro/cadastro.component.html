@@ -12,15 +12,15 @@
       Insira um CNPJ válido.
     </div>
   
-    <label for="EnumSituacao">Situação:</label>
-    <!-- Use a select here for enum dropdown -->
-    <select id="EnumSituacao" formControlName="EnumSituacao">
-      <option>Ativo</option>
-      <option>Inativo</option>
-    </select>
-    <div *ngIf="empresaForm.get('EnumSituacao')?.invalid && empresaForm.get('EnumSituacao')?.touched">
-      A situação é obrigatória.
-    </div>
+   <label for="EnumSituacao">Situação:</label>
+  <select id="EnumSituacao" formControlName="EnumSituacao">
+    <option value="" disabled selected>Selecione a situação</option> <!-- Placeholder -->
+    <option [value]="1">Ativo</option>
+    <option [value]="0">Inativo</option>
+  </select>
+  <div *ngIf="empresaForm.get('EnumSituacao')?.invalid && empresaForm.get('EnumSituacao')?.touched">
+    A situação é obrigatória.
+  </div>
   
     <label for="Setor">Setor:</label>
     <input id="Setor" formControlName="Setor" />
